@@ -1,5 +1,5 @@
 # TC1031 (Programación de estructuras de datos y algoritmos fundamentales (Gpo 602))
-Este proyecto es una página web que muestra diferentes géneros de libros y los vende. El usuario podrá consultar los libros disponibles en el sistema y ver cuál es el más vendido (BESTSELLER). El personal de la librería podrá ingresar nuevos libros y registrar las ventas de cada uno.
+Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto con los siguientes atributos: Nombre del producto, Origen y Calorías. El cliente podrá ver todos los productos disponibles en la dulcería y organizar los productos en el orden de menor a mayor cantidad de calorías. El vendedor podrá agregar nuevos dulces y consultar la lista de productos.
 
 # SICT0301: Evalúa los componentes
 

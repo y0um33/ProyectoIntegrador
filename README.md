@@ -3,8 +3,8 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 
 ## SICT0301: Evalúa los componentes
 ### Análisis de coplejidad correcto y completo para los algoritmos de ordeamiento usandos en el programa
-Ordenamiento por caloría -> ordenamiento de burbuja: complejidad temporal peor caso O(n^2) y complejidad espacial peor caso O(1)
-Ordenamiento por origen -> ordenamiento de burbuja: complejidad temporal peor caso O(n^2) y complejidad espacial peor caso O(1)
+- Ordenamiento por caloría -> ordenamiento de burbuja: complejidad temporal peor caso O(n^2) y complejidad espacial peor caso O(1)
+- Ordenamiento por origen -> ordenamiento de burbuja: complejidad temporal peor caso O(n^2) y complejidad espacial peor caso O(1)
 
 ### Análisis de complejidad correcto y completo todas las estructuras de datos y cada uno de sus usos en el programa
 

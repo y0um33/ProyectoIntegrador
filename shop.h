@@ -1,3 +1,10 @@
+/*
+Yumee Chung
+A01712059
+
+shop.h es para guardar los métodos para crear dulce, agregar dulce, mostrar dulce
+ordenar la caloría y ordenar el origen de los dulces. 
+*/
 #ifndef SHOP_H_
 #define SHOP_H_
 

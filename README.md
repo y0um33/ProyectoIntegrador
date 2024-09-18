@@ -10,7 +10,8 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 - Array de los dulces (can)-> array: complejidad temporal pero caso para acceso O(1) y peor caso para inserción O(n) y complejidad espacial peor caso O(n)
 
 ### Análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa
-
+- Acceso a datos: muestra_dulce O(n) va leer los elementos dentro del arreglo
+- Inserción en datos: agrega_dulce, crea_dulce O(n) va agregar dulces en el arreglo
 ## SICT0302: Toma decisiones
 ### Selecciona un algoritmo de ordenamiento adecuado al problema
 El algoritmo de ordenamiento utilizado en este programa es el ordenamiento por burbuja, que se emplea para ordenar los orígenes de los dulces en orden alfabético ascendente y las calorías de los dulces en orden numérico ascendente. El ordenamiento por burbuja tiene una complejidad temporal en el peor caso de O(n^2) y una complejidad espacial en el peor caso de O(1). La razón por la que escogí este algoritmo es que el número de elementos es pequeño(cantidad fija de la caloría y origen) y también ordena los elementos dentro del arreglo original, sin requerir espacio adicional en la memoria.

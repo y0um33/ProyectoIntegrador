@@ -16,4 +16,4 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 El algoritmo de ordenamiento utilizado en este programa es el ordenamiento por burbuja, que se emplea para ordenar los orígenes de los dulces en orden alfabético ascendente y las calorías de los dulces en orden numérico ascendente. El ordenamiento por burbuja tiene una complejidad temporal en el peor caso de O(n^2) y una complejidad espacial en el peor caso de O(1). La razón por la que escogí este algoritmo es que el número de elementos es pequeño(cantidad fija de la caloría y origen) y también ordena los elementos dentro del arreglo original, sin requerir espacio adicional en la memoria.
 
 ### Selecciona una estructura de datos adecuada al problema
-La estructura de datos que decidí que era adecuada al problema es array. 
+La estructura de datos que decidí que era adecuada al problema es array. El arreglo utilizada se nombra can y cada elemento del arreglo es un puntero a un objeto del tipo Candy.

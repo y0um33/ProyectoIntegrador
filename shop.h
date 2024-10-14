@@ -2,8 +2,7 @@
 Yumee Chung
 A01712059
 
-shop.h es para guardar los métodos para crear dulce, agregar dulce, mostrar dulce
-ordenar la caloría y ordenar el origen de los dulces. 
+shop.h es para guardar los métoddos del ordenamiento 
 */
 #ifndef SHOP_H_
 #define SHOP_H_
@@ -11,16 +10,19 @@ ordenar la caloría y ordenar el origen de los dulces.
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <vector>
 #include "candy.h"
 
 using namespace std;
 
-const int MAX = 1000;
-
 class Shop {
-private:
-    Candy* can[MAX];
+protected:
+    vector<Candy*> can;
     int ven;
+
+    void copyArray(vector<Candy*>&, vector<Candy*>&, int, int);
+    void mergeSplit(vector<Candy*>&, vector<Candy*>&, int, int);
+    void mergeArray(vector<Candy*>&, vector<Candy*>&, int, int, int);
 
 public:
     Shop() : ven(0) {}
@@ -29,17 +31,17 @@ public:
     void muestra_dulce();
     void agrega_dulce(int calorie, string name, string origin);
     void sort_calorie();
-    void sort_origin();
+    void mergeSort();
 };
 
 void Shop::crea_dulce() {
-    can[ven] = new Candy(50, "Sour Patch", "Canadá");
+    can.push_back(new Candy(50, "Sour Patch", "Canadá"));
     ven++;
-    can[ven] = new Candy(98, "Carlos V", "México");
+    can.push_back(new Candy(98, "Carlos V", "México"));
     ven++;
-    can[ven] = new Candy(46, "Chupa Chups", "España");
+    can.push_back(new Candy(46,"Chupa Chups", "España"));
     ven++;
-    can[ven] = new Candy(100, "HARIBO Goldbears", "Alemania");
+    can.push_back(new Candy(100, "HARIBO Goldbears", "Alemania"));
     ven++;
 }
 
@@ -49,36 +51,64 @@ void Shop::muestra_dulce() {
 }
 
 void Shop::agrega_dulce(int calorie, string name, string origin) {
-    can[ven] = new Candy(calorie, name, origin);
-    ven++;
+    can.push_back(new Candy(calorie, name, origin));
 }
 
-//Ordena la caloría en orden ascendente
-//Bubble Sort
-void Shop::sort_calorie() {
-    for (int i = 0; i < ven - 1; i++) {  //ciclo externo: recorre hasta el tamaño-1 del arreglo
-        for (int j = 0; j < ven - i - 1; j++) { //ciclo interno: compara el valor con todos los valores y busca el lugar correspondiente
-            if (can[j]->get_cal() > can[j + 1]->get_cal()) { //si la caloría es menor que el siguiente caloría
-                Candy* temp = can[j]; //realiza este intercambio guardando el valor [j] en variable temp
-                can[j] = can[j + 1]; //igualamos j con el siguiente j+1
-                can[j + 1] = temp;  //guarda j+1 en el variable temp
-            }
+void Shop::copyArray(vector<Candy*> &A, vector<Candy*> &B, int low, int high){
+    for(int i = low; i <= high; i++){
+        A[i] = B[i];
+    }
+}
+
+void Shop::mergeArray(vector<Candy*> &A, vector<Candy*> &B, int low, int mid, int high){
+    int i, j, k;
+
+    i = low;
+    j = mid + 1;
+    k = low;
+
+    while(i <= mid && j <= high){
+        if(A[i]->get_cal() < A[j]->get_cal()){
+            B[k] = A[i];
+            i++;
+        } else{
+            B[k] = A[j];
+            j++;
+        }
+        k++;
+    }
+    if(i > mid){
+        for(; j <= high; j++){
+            B[k++] = A[j];
+        }
+    } else{
+        for(; i <= mid; i++){
+            B[k++] = A[i];
         }
     }
 }
 
-//Ordena el país del origen en orden alfabético ascendente
-//Bubble Sort
-void Shop::sort_origin() {
-    for (int i = 0; i < ven - 1; i++) { //ciclo externo: recorre hasta el tamaño-1 del arreglo
-        for (int j = 0; j < ven - i - 1; j++) { //ciclo interno: compara el valor con todos los valores y busca el lugar correspondiente
-            if (can[j]->get_origin() > can[j + 1]->get_origin()) { //si el alfabeto origen es menor que el siguiente alfabeto origen
-                Candy* temp = can[j]; //realiza este intercambio guardando el valor [j] en variable temp
-                can[j] = can[j + 1]; //igualamos j con el siguiente j+1
-                can[j + 1] = temp; //guarda j+1 en el variable temp
-            }
-        }
+void Shop::mergeSplit(vector<Candy*> &A, vector<Candy*> &B, int low, int high){
+    int mid;
+
+    if( (high - low) < 1){
+        return;
     }
+    mid = (high + low) / 2;
+    mergeSplit(A, B, low, mid);
+    mergeSplit(A, B, mid + 1, high);
+    mergeArray(A, B, low, mid, high);
+    copyArray(A, B, low, high);
+}
+
+/*
+El ordenamiento Merge tiene un peor caso de la complejidad en el tiempo O(n log(n))
+y el peor caso de la complejidad espacial O(n).
+*/
+void Shop::mergeSort(){
+    vector<Candy*> tmp(can.size());
+
+    mergeSplit(can, tmp, 0, can.size() - 1);
 }
 
 #endif

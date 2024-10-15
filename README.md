@@ -10,17 +10,23 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 - Lista doblemente encadenada: complejidad temporal peor caso para acceso O(n) e inserción O(1) y eliminación O(1) y complejidad espacial peor caso O(n).
 
 ### Análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa
+**Lista de empleados** 
+- Lista doblemente encadenada
+   - Inserción: O(1) 
+   - Eliminación: O(1)
+**Vector de dulces**
 - Acceso a datos: muestra_dulce O(1) va leer los objetos en el vector
-- Inserción en datos: agrega_dulce, crea_dulce O(n) va agregar dulces en el arreglo
-- Ordenamiento por mezcla: O(n log(n))
+- Inserción en datos: agrega_dulce, crea_dulce O(n) va agregar dulces en el arregl
+**Ordenamiento de dulces**
+- Por mezcla: O(n log(n))
    - copyArray: para crear copia del vector para realizar la división y mezcla.
    - mergeSplit: se divide en mitad low to mid y mid+1 a high
-   - mergeArray: 
-   - mergeSort
+   - mergeArray: cuando ya no se puede dividir, se empiezan a juntar
+   - mergeSort: modifica
 
 ## SICT0302: Toma decisiones
 ### Selecciona un algoritmo de ordenamiento adecuado al problema
-El algoritmo de ordenamiento utilizado en este programa es el ordenamiento por burbuja, que se emplea para ordenar los orígenes de los dulces en orden alfabético ascendente y las calorías de los dulces en orden numérico ascendente. El ordenamiento por burbuja tiene una complejidad temporal en el peor caso de O(n^2) y una complejidad espacial en el peor caso de O(1). La razón por la que escogí este algoritmo es que el número de elementos es pequeño(cantidad fija de la caloría y origen) y también ordena los elementos dentro del arreglo original, sin requerir espacio adicional en la memoria.
+El algoritmo de ordenamiento utilizado en este programa es el ordenamiento por mezcla, que se emplea para ordenar las calorías de los dulces en orden numérico ascendente. El ordenamiento por mezcla tiene una complejidad temporal en el peor caso de O(n log(n)) y una complejidad espacial en el peor caso de O(n). Por lo tanto, se puede concluir que, comparado con otros algoritmos de ordenamiento que tienen un peor rendimiento en el peor caso, el ordenamiento por mezcla es muy eficiente y rápido para este programa.
 
 ### Selecciona una estructura de datos adecuada al problema
-La estructura de datos que consideré más adecuada para el problema es la lista doblemente encadenada (Doubly-Linked List). El problema implica la inserción (insertar dulces) y eliminación de objetos (eliminar dulces), y la lista doblemente encadenada tiene un caso peor de O(1) para la inserción y eliminación, y O(n) para el acceso. Entonces, comparado a otras estructuras, es la más eficiente y rápida.
+En este programa se utilizaron dos estructuras de datos: el vector y la lista doblemente enlazada. Para realizar el algoritmo de ordenamiento, se generó un vector que guarda los objetos (dulces). La lista doblemente enlazada se utilizó para insertar y eliminar objetos (empleados). El problema implica la inserción (agregar dulces) y eliminación de objetos (eliminar dulces), y la lista doblemente enlazada tiene un mejor caso de O(1) para la inserción y eliminación, y O(n) para el acceso. Por lo tanto, comparada con otras estructuras, es la más eficiente y rápida.

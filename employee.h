@@ -1,4 +1,7 @@
 /*
+Yumee Chung
+A01712059
+
 ver, insertar, eliminar los empleados del candy shop
 utilizando una lista doblemente encadenada
 */

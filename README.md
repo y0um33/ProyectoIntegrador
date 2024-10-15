@@ -11,18 +11,16 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 
 ### Análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa
 **Lista de empleados** 
-- Lista doblemente encadenada
-   - Inserción: O(1) 
-   - Eliminación: O(1)
+- Lista doblemente encadenada: Inserción: O(1) y Eliminación: O(1)
 **Vector de dulces**
 - Acceso a datos: muestra_dulce O(1) va leer los objetos en el vector
-- Inserción en datos: agrega_dulce, crea_dulce O(n) va agregar dulces en el arregl
+- Inserción en datos: agrega_dulce, crea_dulce O(n) va agregar dulces en el vector
 **Ordenamiento de dulces**
 - Por mezcla: O(n log(n))
-   - copyArray: para crear copia del vector para realizar la división y mezcla.
-   - mergeSplit: se divide en mitad low to mid y mid+1 a high
-   - mergeArray: cuando ya no se puede dividir, se empiezan a juntar
-   - mergeSort: modifica
+- _copyArray: para crear copia del vector para realizar la división y mezcla._
+- _mergeSplit: se divide en mitad low to mid y mid+1 a high_
+- _mergeArray: cuando ya no se puede dividir, se empiezan a juntar_
+- _mergeSort: modifica_
 
 ## SICT0302: Toma decisiones
 ### Selecciona un algoritmo de ordenamiento adecuado al problema

@@ -52,6 +52,7 @@ void Shop::muestra_dulce() {
 
 void Shop::agrega_dulce(int calorie, string name, string origin) {
     can.push_back(new Candy(calorie, name, origin));
+    ven++;
 }
 
 void Shop::copyArray(vector<Candy*> &A, vector<Candy*> &B, int low, int high){

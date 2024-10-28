@@ -36,3 +36,8 @@ En este programa se utilizaron dos estructuras de datos: el vector y la lista do
 Para consultar los dulces en el menú ingresas _opción 1_ y para ordenar por mezcla ingresas otra vez el número _1_. Y para agregar dulces, en el menú inicio ingresas _opción 2_ e ingresas número _1_. Para agregar empleados, en ese _opción 2_ ingresar número _2_ y finalment para poder eliminar los empleados, en ese _opción 2_ ingresar número _3_.
 ### Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta
 Los dulces están escritos en el archivo _candy.h_ y los empleados están escritos en el archivo _main.cpp_
+
+## Correciones
+Avance 1:
+Avance 2:
+Avance 3:

@@ -35,9 +35,14 @@ En este programa se utilizaron dos estructuras de datos: el vector y la lista do
 ### Implementa mecanismos para consultar información de las estructras correctos
 Para consultar los dulces en el menú ingresas _opción 1_ y para ordenar por mezcla ingresas otra vez el número _1_. Y para agregar dulces, en el menú inicio ingresas _opción 2_ e ingresas número _1_. Para agregar empleados, en ese _opción 2_ ingresar número _2_ y finalment para poder eliminar los empleados, en ese _opción 2_ ingresar número _3_.
 ### Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta
-Los dulces están escritos en el archivo _candy.h_ y los empleados están escritos en el archivo _main.cpp_
+Las dulces están registradas en el archivo _dulces.csv_. Y con la función _muestra_datos_ puede cargar datos.
+
+### Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta
+A través de la función _agrega_dulces_ el usuario puede guardar los datos en el archivo _dulces.csv_. 
 
 ## Correciones
-Avance 1:
-Avance 2:
+Avance 1: El algoritmo de ordenamiento que implementé no fue adecuado para mi código (Ordenamiento de Burbuja), así que lo cambié a ordenamiento por mezcla. Además, en lugar de guardar los objetos en un arreglo, cambié a un vector (para almacenar objetos de tipo Dulce) y añadí una estructura de lista doblemente enlazada (para guardar objetos de tipo Empleado).
+
+Avance 2: Al ingresar una opción en el menú principal, si el usuario introducía un valor no numérico (letras), el programa se crasheaba. Para evitar esto, agregué un else if de _cin.fail()_ para que el código no se crashee aunque el usuario ingrese un valor que genere un error.
+
 Avance 3:

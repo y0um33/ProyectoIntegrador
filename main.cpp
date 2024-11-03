@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include "shop.h"
 #include "employee.h"
 
@@ -17,7 +18,7 @@ int main(int argc, char *argv[]) {
     string nomb;
 
     Shop tienda;
-    tienda.crea_dulce();
+    tienda.crea_dulce("dulces.csv");
 
     //Agregar en la lista los empleados
     d1.insertion("Juan");
@@ -50,7 +51,7 @@ int main(int argc, char *argv[]) {
             cout << "Eliminar empleados -> 3" << endl;
             cin >> respo;
 
-            if (respo == 1) { // Agregar en el vector
+            if (respo == 1) { // Agregar en el archivo dulces.csv
                 cout << "Nombre de dulce: " << ' ';
                 cin >> temp_nombre;
                 cout << "Caloría: " << ' ';
@@ -86,12 +87,14 @@ int main(int argc, char *argv[]) {
             } else {
                 cout << "Oops no sé qué quieres hacer :(" << endl;
             }
+        } else if(cin.fail()){
+                cout << "UH-OH opción inválida" << endl;
         }
     }
 
     if (opcion == 0) {
         cout << "Gracias por su visita :)" << endl;
-    }
+    } 
 
     return 0; 
 }

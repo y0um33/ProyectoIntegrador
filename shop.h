@@ -11,6 +11,7 @@ shop.h es para guardar los métoddos del ordenamiento
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <fstream>
 #include "candy.h"
 
 using namespace std;
@@ -27,32 +28,50 @@ protected:
 public:
     Shop() : ven(0) {}
 
-    void crea_dulce();
-    void muestra_dulce();
+    void crea_dulce(const string& datasheet);
+    void muestra_dulce() const;
     void agrega_dulce(int calorie, string name, string origin);
     void sort_calorie();
     void mergeSort();
 };
 
-void Shop::crea_dulce() {
-    can.push_back(new Candy(50, "Sour Patch", "Canadá"));
-    ven++;
-    can.push_back(new Candy(98, "Carlos V", "México"));
-    ven++;
-    can.push_back(new Candy(46,"Chupa Chups", "España"));
-    ven++;
-    can.push_back(new Candy(100, "HARIBO Goldbears", "Alemania"));
-    ven++;
+void Shop::crea_dulce(const string& datasheet) {
+    ifstream archivo(datasheet);
+    string linea;
+
+    if(archivo.is_open()){
+        while(getline(archivo, linea)){
+            istringstream ss(linea);
+            string name, origin;
+            int calorie;
+
+            if((getline(ss, name, ',')) && ss >> calorie && getline(ss, origin, ',')) {
+                can.push_back(new Candy(calorie, name, origin));
+                ven++;
+            }
+        }
+        archivo.close();
+    } else{
+        cout << "Unable to open file" << endl;
+    }
 }
 
-void Shop::muestra_dulce() {
-    for (int i = 0; i < ven; i++)
-        cout << can[i]->to_string() << endl;
+void Shop::muestra_dulce() const {
+    for (const auto& candy : can)
+        cout << candy->to_string() << endl;
 }
 
 void Shop::agrega_dulce(int calorie, string name, string origin) {
     can.push_back(new Candy(calorie, name, origin));
     ven++;
+
+    std::ofstream file("dulces.csv", std::ios::app);
+    if (file.is_open()) {
+        file << name << "," << calorie << "," << origin << "\n";
+        file.close();
+    } else {
+        cout << "Unable to open file" << endl;
+    }
 }
 
 void Shop::copyArray(vector<Candy*> &A, vector<Candy*> &B, int low, int high){

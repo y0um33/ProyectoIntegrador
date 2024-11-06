@@ -38,7 +38,7 @@ Para consultar los dulces en el menú ingresas _opción 1_ y para ordenar por me
 Las dulces están registradas en el archivo _dulces.csv_. Y con la función _muestra_datos_ puede cargar datos.
 
 ### Implementa mecanismos de escritura de archivos para guardar los datos de las estructuras de manera correcta
-A través de la función _agrega_dulces_ el usuario puede guardar los datos en el archivo _dulces.csv_. 
+A través de la función _agrega_dulces_ el usuario (staff) puede guardar los datos en el archivo _dulces.csv_. 
 
 ## Correciones
 Avance 1: El algoritmo de ordenamiento que implementé no fue adecuado para mi código (Ordenamiento de Burbuja), así que lo cambié a ordenamiento por mezcla. Además, en lugar de guardar los objetos en un arreglo, cambié a un vector (para almacenar objetos de tipo Dulce) y añadí una estructura de lista doblemente enlazada (para guardar objetos de tipo Empleado).

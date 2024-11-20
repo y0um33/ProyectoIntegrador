@@ -24,6 +24,9 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 - _mergeArray: cuando ya no se puede dividir, se empiezan a juntar_
 - _mergeSort: modifica_
 
+**Complejidad espacial total del programa: ** O(3n)
+**Complejidad temporal total del programa: ** O(2n log(n))
+
 ## SICT0302: Toma decisiones
 ### Selecciona un algoritmo de ordenamiento adecuado al problema
 El algoritmo de ordenamiento utilizado en este programa es el ordenamiento por mezcla, que se emplea para ordenar las calorías de los dulces en orden numérico ascendente. El ordenamiento por mezcla tiene una complejidad temporal en el peor caso de O(n log(n)) y una complejidad espacial en el peor caso de O(n). Por lo tanto, se puede concluir que, comparado con otros algoritmos de ordenamiento que tienen un peor rendimiento en el peor caso, el ordenamiento por mezcla es muy eficiente y rápido para este programa.

@@ -1,6 +1,24 @@
 # EVIDENCIA 1 PROYECTO INTEGRADOR (TC1031)
 Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto con los siguientes atributos: Nombre del producto, Origen y Calorías. El cliente podrá ver todos los productos disponibles en la dulcería y organizar los productos en el orden de menor a mayor cantidad de calorías. El vendedor podrá agregar nuevos dulces y consultar la lista de productos.
 
+## Funcionamiento
+El programa imprime un menú principal para identificar si el usuario es cliente o staff. Las opciones son:
+1. Cliente -> 1
+2. Staff -> 2
+3. Salir -> 0
+
+Cuando ingresas como cliente la programa va mostrar las listas de dulces disponibles. Y cuando el usuario ingresa número "1", va poder ordenar los productos en el orden de menor a mayor caloría. 
+
+Cuando ingresas como staff, el programa va imprimir 3 opciones:
+1. Agregar Productos -> 1
+2. Agregar Empleados -> 2
+3. Eliminar Empleados -> 3
+
+Cuando ingresas "1" para agregar productos, el programa pedirá que insertes el nombre del producto, su origen y la cantidad de calorías. Luego, imprimirá la lista de dulces actualizada. Si ingresas "2", podrás agregar un empleado, y para eliminar (opción "3"), deberás insertar el índice del empleado que deseas eliminar, y el programa lo eliminará.
+
+## Consideraciones
+Al ingresar los valores de los dulces, por favor asegúrate de proporcionar el tipo de dato que el programa solicita. Por ejemplo, si se requiere ingresar las calorías, introduce un **valor numérico entero**. No solo en calorías, en otras instrucciones también PORFAVOR ¡Gracias :)! 
+
 ## SICT0301: Evalúa los componentes
 ### Análisis de coplejidad correcto y completo para los algoritmos de ordeamiento usandos en el programa
 - Ordenamiento por caloría -> ordenamiento por mezcla (Merge Sort): complejidad temporal peor caso O(n log(n)) y complejidad espacial peor caso O(n)

@@ -42,10 +42,14 @@ void Shop::crea_dulce(const string& datasheet) {
     if(archivo.is_open()){
         while(getline(archivo, linea)){
             istringstream ss(linea);
-            string name, origin;
+            string name, origin, calStr;
             int calorie;
 
-            if((getline(ss, name, ',')) && ss >> calorie && getline(ss, origin, ',')) {
+            if (getline(ss, calStr, ',')){
+                calorie = atoi(calStr.c_str());
+            }
+
+            if(getline(ss, name, ',') && getline(ss, origin)){
                 can.push_back(new Candy(calorie, name, origin));
                 ven++;
             }
@@ -62,12 +66,13 @@ void Shop::muestra_dulce() const {
 }
 
 void Shop::agrega_dulce(int calorie, string name, string origin) {
+
     can.push_back(new Candy(calorie, name, origin));
     ven++;
 
     std::ofstream file("dulces.csv", std::ios::app);
     if (file.is_open()) {
-        file << name << "," << calorie << "," << origin << "\n";
+        file << calorie << "," << name << "," << origin << "\n";
         file.close();
     } else {
         cout << "Unable to open file" << endl;

@@ -25,6 +25,7 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 - _mergeSort: modifica_
 
 **Complejidad espacial total del programa: ** O(3n)
+
 **Complejidad temporal total del programa: ** O(2n log(n))
 
 ## SICT0302: Toma decisiones

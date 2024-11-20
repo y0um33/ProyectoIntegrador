@@ -24,9 +24,9 @@ Este proyecto es una dulcería. Cada dulce tendrá un constructor por defecto co
 - _mergeArray: cuando ya no se puede dividir, se empiezan a juntar_
 - _mergeSort: modifica_
 
-**Complejidad espacial total del programa: ** O(3n)
+**Complejidad espacial total del programa:** O(3n)
 
-**Complejidad temporal total del programa: ** O(2n log(n))
+**Complejidad temporal total del programa:** O(2n log(n))
 
 ## SICT0302: Toma decisiones
 ### Selecciona un algoritmo de ordenamiento adecuado al problema
@@ -49,4 +49,4 @@ Avance 1: El algoritmo de ordenamiento que implementé no fue adecuado para mi c
 
 Avance 2: Al ingresar una opción en el menú principal, si el usuario introducía un valor no numérico (letras), el programa se crasheaba. Para evitar esto, agregué un else if de _cin.fail()_ para que el código no se crashee aunque el usuario ingrese un valor que genere un error.
 
-Avance 3:
+Avance 3: Lograba leer y cargar el archivo CSV, sin embargo, faltaba validación de los datos leídos: no se verificaba si los valores en ciertos campos, (en este caso las calorías) eran numéricos válidos. Y tampoco comprobaba que los campos no estuvieran vacíos. Entonces, para hacer la validación utilicé _isdigit_ para verificar el valor registrada es un número. Y condicional if para verificar si el campo está vacío o no. 
